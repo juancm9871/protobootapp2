@@ -26,7 +26,8 @@ public class HttpRequestTest {
                 String.class)).contains("Hola Mundo!");
     }
     
-    
+    @Test
+    public void testCuadradoPorDefecto() throws Exception {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/cuadrado",
                 String.class)).containsPattern("El cuadrado de 0[\\.,]000000 es 0[\\.,]000000");
     }
@@ -37,7 +38,8 @@ public class HttpRequestTest {
                 String.class)).containsPattern("El cubo de 0[\\.,]000000 es 0[\\.,]000000");
     }
     
-    
+    @Test
+    public void testCuadradoNumero() throws Exception {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/cuadrado?numero=3",
                 String.class)).containsPattern("El cuadrado de 3[\\.,]000000 es 9[\\.,]000000");
     }
